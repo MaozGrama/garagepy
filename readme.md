@@ -15,4 +15,6 @@ The script provides a menu with the following options:
 2 - REMOVE: Remove a car from the list by index.
 3 - UPDATE: Update the details of a car by index.
 4 - INFO: Display information about all cars.
-5 - EXIT: Exit the program.
+5 - COUNT: Display the total number of cars in the list.
+6 - RESET: Clear all car data and reset the list.
+7 - EXIT: Exit the program.

@@ -21,7 +21,8 @@ class Actions(Enum):
     UPDATE = 3
     INFO = 4
     COUNT = 5
-    EXIT = 6
+    RESET = 6
+    EXIT = 7
 
 def save_to_file():
     with open(file_path, 'w') as json_file:
@@ -67,6 +68,11 @@ def info():
 def count():
     print(f"Total number of cars: {len(Cars)}")
 
+def reset():
+    Cars.clear()
+    save_to_file()
+    print("All car data has been reset.")
+
 if __name__ == "__main__":
     while True:
         user_selection = menu()
@@ -80,5 +86,7 @@ if __name__ == "__main__":
             info()
         elif user_selection == Actions.COUNT:
             count()
+        elif user_selection == Actions.RESET:
+            reset()
         elif user_selection == Actions.EXIT:
             exit()

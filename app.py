@@ -20,7 +20,8 @@ class Actions(Enum):
     REMOVE = 2  
     UPDATE = 3
     INFO = 4
-    EXIT = 5
+    COUNT = 5
+    EXIT = 6
 
 def save_to_file():
     with open(file_path, 'w') as json_file:
@@ -63,6 +64,9 @@ def info():
     for index, Car in enumerate(Cars):
         print(f"({index}) cModel: {Car['cModel']} , cColor: {Car['cColor']}, CustomerName: {Car['CustomerName']}")
 
+def count():
+    print(f"Total number of cars: {len(Cars)}")
+
 if __name__ == "__main__":
     while True:
         user_selection = menu()
@@ -74,5 +78,7 @@ if __name__ == "__main__":
             update()
         elif user_selection == Actions.INFO:
             info()
+        elif user_selection == Actions.COUNT:
+            count()
         elif user_selection == Actions.EXIT:
             exit()
